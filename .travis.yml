@@ -1,0 +1,14 @@
+sudo: required
+services: docker
+dist: bionic
+group: edge
+language: minimal
+branches:
+    only:
+        - develop
+before_script:
+    - sudo chown -R 1000:1000 .
+    - make image
+script:
+    - make tweet
+    - sudo chown -R ${USER}:${USER} .

@@ -1,0 +1,11 @@
+name: tweet-last-post-from-feed
+author: Luis Alejandro Martínez Faneyth
+description: GitHub Action for tweeting the latest entry from an atom feed
+
+runs:
+  using: python
+  main: entrypoint.py
+
+branding:
+  icon: twitter
+  color: blue
