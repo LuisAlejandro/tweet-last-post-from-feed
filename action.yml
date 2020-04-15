@@ -9,5 +9,5 @@ runs:
     - entrypoint.py
 
 branding:
-  icon: twitter
+  icon: at-sign
   color: blue
