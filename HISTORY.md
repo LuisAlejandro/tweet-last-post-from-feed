@@ -1,6 +1,15 @@
 # Changelog
 
 
+## 0.1.1 (2020-04-15)
+
+### Changes
+
+* Removing travis builds. [Luis Alejandro Martínez Faneyth]
+
+* Configuring github actions to user docker. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.1.0 (2020-04-15)
 
 ### Changes
