@@ -45,10 +45,6 @@ def escape(_string):
     return quote(u(_string).encode(), safe='~')
 
 
-def utfize(_string):
-    return str(_string)
-
-
 def filter_json_index_by_year(json_index_content):
     json_index_filtered = {}
     current_year = int(datetime.now().strftime('%Y'))
