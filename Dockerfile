@@ -19,4 +19,5 @@ ADD requirements.txt /root/
 RUN pip install -r /root/requirements.txt
 RUN rm /root/requirements.txt
 
-CMD bash
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
