@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-python ${1}
+if [ "${1}" == "bash" ]; then
+    bash
+else
+    python ${1}
+fi
