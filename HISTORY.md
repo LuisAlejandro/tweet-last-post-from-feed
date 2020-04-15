@@ -1,6 +1,17 @@
 # Changelog
 
 
+## 0.1.2 (2020-04-15)
+
+### Changes
+
+* Changing branding. [Luis Alejandro Martínez Faneyth]
+
+### Fix
+
+* Fixing entrypoint for testing. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.1.1 (2020-04-15)
 
 ### Changes

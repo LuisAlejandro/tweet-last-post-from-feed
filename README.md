@@ -5,7 +5,7 @@
 
 ---
 
-Current version: 0.1.1
+Current version: 0.1.2
 
 ## 🎒 Prep Work
 1. [Create a twitter app](https://github.com/gr2m/twitter-together/blob/master/docs/01-create-twitter-app.md) with the twitter account where you want to share the tweets.
