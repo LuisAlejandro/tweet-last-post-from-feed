@@ -5,6 +5,8 @@
 
 ---
 
+Current version: 0.1.0
+
 ## 🎒 Prep Work
 1. [Create a twitter app](https://github.com/gr2m/twitter-together/blob/master/docs/01-create-twitter-app.md) with the twitter account where you want to share the tweets.
 2. Find the atom feed URL that contains the posts that you wish to share.
