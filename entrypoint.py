@@ -19,11 +19,11 @@
 import os
 import datetime
 from urllib.request import urlopen
+from html import unescape
 
 from atoma import parse_rss_bytes
 from tweepy import OAuth1UserHandler, API
 
-from utils import html_unescape, u
 
 count = 0
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
@@ -49,7 +49,7 @@ last_timestamp = int(last_run.strftime('%Y%m%d%H%M%S'))
 for post in feed_data.items:
 
     item_timestamp = int(post.pub_date.strftime('%Y%m%d%H%M%S'))
-    status_text = '{0} {1}'.format(u(html_unescape(post.title)), u(post.guid))
+    status_text = '{0} {1}'.format(unescape(post.title), post.guid)
 
     if item_timestamp >= last_timestamp and count <= max_count:
         count += 1
