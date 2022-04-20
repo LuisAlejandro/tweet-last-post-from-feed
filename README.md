@@ -92,7 +92,7 @@ for a `*/5 * * * *` cron (every 5 min), set env `POST_LOOKBACK: 300`.
 
   * You can execute the tweet script with this command:
 
-          make tweet
+          make publish
 
   * Or, alternatively, open a console where you can manually execute the script and debug any errors:
 

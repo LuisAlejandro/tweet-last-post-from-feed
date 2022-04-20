@@ -18,7 +18,7 @@ console: start
 	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
 		--user luisalejandro tweet-last-post-from-feed bash
 
-tweet: start
+publish: start
 	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
 		--user luisalejandro tweet-last-post-from-feed python3 entrypoint.py
 

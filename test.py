@@ -55,5 +55,5 @@ for post in feed_data.items:
     if item_timestamp >= last_timestamp and count <= max_count:
         count += 1
         tweet = api.update_status(status_text)
-        time.sleep(60)
+        time.sleep(10)
         api.destroy_status(tweet.id)
