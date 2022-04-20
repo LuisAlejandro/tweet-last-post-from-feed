@@ -1,6 +1,13 @@
 # Changelog
 
 
+## 0.2.2 (2022-04-20)
+
+### Changed
+
+* Optimizing feed processing. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.2.1 (2022-04-20)
 
 ### Changed
