@@ -6,7 +6,7 @@
 
 ---
 
-Current version: 0.1.2
+Current version: 0.2.0
 
 ## 🎒 Prep Work
 
@@ -15,7 +15,7 @@ Current version: 0.1.2
 
 ## 🖥 Workflow Usage
 
-Configure your workflow to use `LuisAlejandro/tweet-last-post-from-feed@0.1.2`,
+Configure your workflow to use `LuisAlejandro/tweet-last-post-from-feed@0.2.0`,
 and provide the atom feed URL you want to use as the `FEED_URL` env variable.
 
 Provide the authentication keys and tokens for your Twitter app
@@ -37,7 +37,7 @@ jobs:
   tweet:
     runs-on: ubuntu-20.04
     steps:
-      - uses: LuisAlejandro/tweet-last-post-from-feed@0.1.2
+      - uses: LuisAlejandro/tweet-last-post-from-feed@0.2.0
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
