@@ -48,9 +48,12 @@ last_timestamp = int(last_run.strftime('%Y%m%d%H%M%S'))
 
 for post in feed_data.items:
 
+    if count >= max_count:
+        break
+
     item_timestamp = int(post.pub_date.strftime('%Y%m%d%H%M%S'))
     status_text = '{0} {1}'.format(unescape(post.title), post.guid)
 
-    if item_timestamp > last_timestamp and count < max_count:
+    if item_timestamp > last_timestamp:
         count += 1
         api.update_status(status_text)
