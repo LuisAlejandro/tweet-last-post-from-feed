@@ -25,11 +25,11 @@ as the `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET`,
 `Settings` > `Secrets` > `Actions` > `New repository secret`
 for each secret.
 
-For example, create a file `.github/workflows/push.yml` on
+For example, create a file `.github/workflows/schedule.yml` on
 a github repository with the following content:
 
 ```yml
-name: Send a Tweet
+name: Tweet last post of feed hourly
 on:
   schedule:
     - cron: '0 * * * *'
@@ -45,6 +45,8 @@ jobs:
           TWITTER_OAUTH_SECRET: ${{ secrets.TWITTER_OAUTH_SECRET }}
           FEED_URL: https://hnrss.org/newest?points=300&count=3
 ```
+
+Publish your changes, activate your actions if disabled and enjoy.
 
 ## ❗ Important notes
 
@@ -74,7 +76,7 @@ for a `*/5 * * * *` cron (every 5 min), set env `POST_LOOKBACK: 300`.
   * Open a terminal and navigate to the newly created folder.
   * Change to the `develop` branch.
 
-          git branch develop
+          git checkout develop
 
   * Create a `.env` file with the content of the environment secrets as variables, like this (with real values):
 
