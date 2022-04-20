@@ -1,0 +1,40 @@
+name: Tweet last post from feed
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    name: Sending tweet with media
+    runs-on: ubuntu-20.04
+    if: github.repository == 'LuisAlejandro/tweet-last-post-from-feed'
+    strategy:
+      matrix:
+        include:
+          - python-version: "3.10"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: develop
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Installing dependencies
+        run: pip install -r requirements.txt
+      - name: Testing script
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_OAUTH_TOKEN: ${{ secrets.TWITTER_OAUTH_TOKEN }}
+          TWITTER_OAUTH_SECRET: ${{ secrets.TWITTER_OAUTH_SECRET }}
+          STATUS_TEXT: ${{ secrets.STATUS_TEXT }}
+          STATUS_IMAGE_URL_1: ${{ secrets.STATUS_IMAGE_URL_1 }}
+          STATUS_IMAGE_URL_2: ${{ secrets.STATUS_IMAGE_URL_2 }}
+          STATUS_IMAGE_URL_3: ${{ secrets.STATUS_IMAGE_URL_3 }}
+          STATUS_IMAGE_URL_4: ${{ secrets.STATUS_IMAGE_URL_4 }}
+        run: python3 test.py
