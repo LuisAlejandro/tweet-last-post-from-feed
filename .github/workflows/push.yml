@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Sending tweet with media
+    name: Sending last post tweet
     runs-on: ubuntu-20.04
     if: github.repository == 'LuisAlejandro/tweet-last-post-from-feed'
     strategy:
