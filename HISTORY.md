@@ -1,6 +1,18 @@
 # Changelog
 
 
+## 0.2.1 (2022-04-20)
+
+### Changed
+
+* Fixing typo. [Luis Alejandro Martínez Faneyth]
+
+
+### Fixed
+
+* Fixing error in max_count. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.2.0 (2022-04-20)
 
 ### Changed
