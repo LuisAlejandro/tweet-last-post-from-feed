@@ -17,6 +17,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
+import time
 import datetime
 from urllib.request import urlopen
 from html import unescape
@@ -53,4 +54,6 @@ for post in feed_data.items:
 
     if item_timestamp >= last_timestamp and count <= max_count:
         count += 1
-        api.update_status(status_text)
+        tweet = api.update_status(status_text)
+        time.sleep(10)
+        api.destroy_status(tweet.id)

@@ -1,18 +1,42 @@
+#!/usr/bin/env make -f
+# -*- makefile -*-
+
+SHELL = bash -e
+
+BASEDIR = $(shell pwd)
+
 
 image:
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml build \
+		--force-rm --pull
 
-	@docker build -t luisalejandro/tweet-last-post-from-feed:latest .
+start:
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml up \
+		--remove-orphans -d
 
-tweet:
+console: start
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
+		--user luisalejandro tweet-last-post-from-feed bash
 
-	@docker run -it --rm -u luisalejandro --env-file .env \
-		-v $(PWD):/home/luisalejandro/tweet-last-post-from-feed \
-		-w /home/luisalejandro/tweet-last-post-from-feed \
-		luisalejandro/tweet-last-post-from-feed:latest python entrypoint.py
+publish: start
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
+		--user luisalejandro tweet-last-post-from-feed python3 entrypoint.py
 
-console:
+stop:
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml stop
 
-	@docker run -it --rm -u luisalejandro --env-file .env \
-		-v $(PWD):/home/luisalejandro/tweet-last-post-from-feed \
-		-w /home/luisalejandro/tweet-last-post-from-feed \
-		luisalejandro/tweet-last-post-from-feed:latest bash
+down:
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml down \
+		--remove-orphans
+
+destroy:
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml down \
+		--rmi all --remove-orphans -v
+
+virtualenv: start
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
+		--user luisalejandro tweet-last-post-from-feed python3 -m venv --clear --copies ./virtualenv
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
+		--user luisalejandro tweet-last-post-from-feed ./virtualenv/bin/pip install -U wheel setuptools
+	@docker-compose -p tweet-last-post-from-feed -f docker-compose.yml exec \
+		--user luisalejandro tweet-last-post-from-feed ./virtualenv/bin/pip install -r requirements.txt -r requirements-dev.txt

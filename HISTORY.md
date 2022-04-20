@@ -1,20 +1,37 @@
 # Changelog
 
 
+## 0.2.0 (2022-04-20)
+
+### Changed
+
+* Improving Readme. [Luis Alejandro Martínez Faneyth]
+
+* Fixing python 3 error. [Luis Alejandro Martínez Faneyth]
+
+* Using external lib to tweet. [Luis Alejandro Martínez Faneyth]
+
+
+### Fixed
+
+* Fixing workflows. [Luis Alejandro Martínez Faneyth]
+
+
 ## 0.1.2 (2020-04-15)
 
-### Changes
+### Changed
 
 * Changing branding. [Luis Alejandro Martínez Faneyth]
 
-### Fix
+
+### Fixed
 
 * Fixing entrypoint for testing. [Luis Alejandro Martínez Faneyth]
 
 
 ## 0.1.1 (2020-04-15)
 
-### Changes
+### Changed
 
 * Removing travis builds. [Luis Alejandro Martínez Faneyth]
 
@@ -23,7 +40,7 @@
 
 ## 0.1.0 (2020-04-15)
 
-### Changes
+### Changed
 
 * Configuring bumpversion. [Luis Alejandro Martínez Faneyth]
 
@@ -39,9 +56,11 @@
 
 * Migrating from Openshift to GitLab. [Luis Alejandro Martínez Faneyth]
 
-### Fix
+
+### Fixed
 
 * Fixing script command. [Luis Alejandro Martínez Faneyth]
+
 
 ### Other
 
@@ -52,5 +71,4 @@
 * S. [Luis Alejandro Martínez Faneyth]
 
 * Creating template. [Template builder]
-
 
