@@ -1,12 +1,4 @@
-<p align='center'>
-  <img src="https://github.com/LuisAlejandro/tweet-last-post-from-feed/blob/develop/branding/banner.svg">
-  <h3 align="center">Tweet last post from feed</h3>
-  <p align="center">GitHub Action for tweeting the latest entry from an atom feed</p>
-</p>
-
----
-
-Current version: 0.2.2
+# Development of this app has been halted in favor of [Agoras](https://github.com/LuisAlejandro/agoras)
 
 ## 🎒 Prep Work
 
